@@ -13,9 +13,8 @@ def semiperfect(n):
     >>> [k for k in range(1, 40) if semiperfect(k)]
     [6, 12, 18, 20, 24, 28, 30, 36]
     """
-    def f(s, d):
-        ...
-
+    
+    
 
 if __name__ == "__main__":
     import doctest
