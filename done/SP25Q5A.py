@@ -21,6 +21,12 @@ def muladd(s):
     >>> muladd(Link(2))
     2
     """
+    if s == ():
+        return 0
+    if s.rest == ():
+        return s.first
+    return s.first * s.rest.first + muladd(s.rest.rest)
+
 
 
 if __name__ == "__main__":

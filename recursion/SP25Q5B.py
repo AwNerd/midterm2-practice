@@ -21,7 +21,14 @@ def ways(k, n):
     13
     """
     def f(left, n):
-        ...
+        if left < 0:
+            return 0
+        if n == 1:
+            return 1
+        else:
+            return f(left - 1, n - 1) + f(k, n - 1)
+    return f(k, n)
+
 
 
 if __name__ == "__main__":

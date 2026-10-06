@@ -34,6 +34,22 @@ def drip(s, t):
     >>> drip([1], [2, 3, 5])  # No strip can contain 3 and 5 but no 4
     False
     """
+    t_counter, s_counter, curr = 0,1,s[0]
+    while t_counter != len(t) and s_counter != len(s):
+        if t[t_counter] == curr + 1:
+            t_counter += 1
+            curr += 1
+        elif s[s_counter] == curr + 1:
+            s_counter += 1
+            curr += 1
+        else:
+            return False
+    
+    if t_counter != len(t):
+        return t[t_counter] == curr + 1 and all([t[i] + 1 == t[i + 1] for i in range(t_counter, len(t) - 1)])
+    else:
+        return s[s_counter] == curr + 1 and all([s[i] + 1 == s[i + 1] for i in range(s_counter, len(s) - 1)])
+        
 
 
 if __name__ == "__main__":

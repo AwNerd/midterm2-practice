@@ -32,7 +32,8 @@ def close(s, x):
     >>> print(close([3, 7, 5, 4, 2, 6], 66))
     67
     """
-
+    
+        
 
 if __name__ == "__main__":
     import doctest
