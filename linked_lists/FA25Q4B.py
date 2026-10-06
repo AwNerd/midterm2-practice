@@ -7,6 +7,7 @@ input linked list should not be modified.
 Exam:     https://cs61a.org/resources/fa25/mt2/61a-fa25-mt2.pdf
 Solution: https://cs61a.org/resources/fa25/mt2/61a-fa25-mt2_sol.pdf
 """
+import os, sys; sys.path[1:1] = [os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', d) for d in ('done', 'recursion', 'lists_and_dicts', 'linked_lists')]  # lets imports work from any folder
 from link import Link
 
 def exclude_link(s, x):

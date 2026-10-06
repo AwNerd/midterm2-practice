@@ -11,6 +11,7 @@ in order. It returns False otherwise. (is_strip from part (a) is imported.)
 Exam:     https://cs61a.org/resources/sp24/mt2/61a-sp24-mt2.pdf
 Solution: https://cs61a.org/resources/sp24/mt2/61a-sp24-mt2_sol.pdf
 """
+import os, sys; sys.path[1:1] = [os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', d) for d in ('done', 'recursion', 'lists_and_dicts', 'linked_lists')]  # lets imports work from any folder
 from SP24Q4A import is_strip
 
 def drip(s, t):

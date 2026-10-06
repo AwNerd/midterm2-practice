@@ -11,6 +11,7 @@ Restriction: you may not use or, and, if, [, or ] in after's return expression
 Exam:     https://cs61a.org/resources/fa23/mt2/61a-fa23-mt2.pdf
 Solution: https://cs61a.org/resources/fa23/mt2/61a-fa23-mt2_sol.pdf
 """
+import os, sys; sys.path[1:1] = [os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', d) for d in ('done', 'recursion', 'lists_and_dicts', 'linked_lists')]  # lets imports work from any folder
 from link import Link
 
 def after(s, a, b):

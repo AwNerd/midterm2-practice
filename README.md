@@ -23,6 +23,8 @@ Linked-list problems import `Link` from `linked_lists/link.py`, where `Link.empt
 
 Some files import from another part of the same question. For example, `FA17Q3B` uses `splice` from `FA17Q3A`, and `SP24Q4B` uses `is_strip` from `SP24Q4A`. Solve the earlier part first.
 
+Files that import have a one-line `sys.path` shim above the import, so they still run after being moved into `done/` (and the imported file can be in its original folder or in `done/`). Keep `link.py` in `linked_lists/`.
+
 ## Problems
 
 ### recursion/
