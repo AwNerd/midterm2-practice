@@ -78,3 +78,7 @@ Files that import have a one-line `sys.path` shim above the import, so they stil
 - FA22Q5A: the exam's `count_subsets(list(range(1, 10000)))` doctest was dropped because the template's approach is exponential.
 - FA16Q7B: `f` and `g` are placeholders set to `None`. Replace each one with a one-line lambda.
 - FA23Q6: in the exam, you could only fill in `find`'s base case and `after`'s final return, without using `if`/`and`/`or`/brackets.
+
+## hard_problems/
+
+Blank copies of the problems worth redoing cold: FA24Q4A, FA23Q4A, FA22Q5A, FA18Q4B, SP25Q5B, SP25Q5C, FA19Q6, SP24Q4B, FA24Q5. Your finished versions stay in `done/`.
