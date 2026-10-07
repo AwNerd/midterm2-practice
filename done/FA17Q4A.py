@@ -18,6 +18,12 @@ def both(a, b):
     >>> both(Link(1, Link(4, Link(5, Link(7)))), Link(2, Link(4, Link(5))))
     True
     """
+    if a == () or b == ():
+        return False
+    if a.first == b.first:
+        return True
+    else:
+        return any([both(a, b.rest), both(a.rest, b)])
 
 
 if __name__ == "__main__":

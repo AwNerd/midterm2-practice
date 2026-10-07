@@ -26,7 +26,7 @@ def is_strip(s):
     >>> is_strip([])
     True
     """
-
+    return all([s[i] + 1 == s[i+1] or s == list for i in range(len(s) - 1)])
 
 if __name__ == "__main__":
     import doctest

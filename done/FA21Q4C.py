@@ -17,6 +17,17 @@ def max_diff_fast(s, f):
     >>> max_diff_fast(['what', 'a', 'great', 'film'], len)  # len('great') - len('a')
     ('great', 'a')
     """
+    curr = 0
+    maxv, maxw = 0,0
+    for v in s:
+        for w in s:
+            if f(v) - f(w) > curr:
+                curr = f(v) - f(w)
+                maxv, maxw = v, w
+    return maxv, maxw
+
+    
+
 
 
 if __name__ == "__main__":

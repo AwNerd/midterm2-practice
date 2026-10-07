@@ -26,6 +26,13 @@ def switch(s, t, k):
     >>> switch([1, 2, 7], [3, 4, 5], 3)
     [3, 4, 7]
     """
+    if k == 0:
+        return s
+    if not s or not t:
+        return []
+    else:
+        return max([s[0]] + switch(s[1:], t[1:], k), [t[0]] + switch(t[1:], s[1:], k - 1), key=sum)
+        
 
 
 if __name__ == "__main__":

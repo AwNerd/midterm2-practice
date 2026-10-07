@@ -25,6 +25,16 @@ def longer(s, t):
     >>> longer(Link.empty, Link.empty) is Link.empty
     True
     """
+    def helper(s_iterator, t_iterator):
+        if s_iterator == () and t_iterator == ():
+            return s
+        if s_iterator == ():
+            return t
+        if t_iterator == ():
+            return s
+        else:
+            return helper(s_iterator.rest, t_iterator.rest)
+    return helper(s,t)
 
 
 def longest(s, n):
@@ -36,6 +46,14 @@ def longest(s, n):
     >>> longest(Link(3, Link(4, Link(5))), 2) is Link.empty
     True
     """
+    if s is Link.empty:
+        return s
+    t = longest(s.rest, n)
+    if n - s.first >= 0:
+        return longer(Link(s.first, longest(s.rest, n - s.first)), t)
+    else:
+        return t
+    
 
 
 if __name__ == "__main__":

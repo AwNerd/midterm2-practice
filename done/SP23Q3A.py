@@ -14,6 +14,7 @@ def prefix(s):
     >>> prefix([2, 2, 2, 0, -5, 5])
     [2, 4, 6, 6, 1, 6]
     """
+    return [sum(s[:k + 1]) for k in range(len(s))]
 
 
 if __name__ == "__main__":

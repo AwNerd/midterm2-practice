@@ -19,6 +19,7 @@ def stable(s, k, n):
     >>> stable([1, 5, 1, 5, 1], 2, 2)  # abs(5-1) is a difference of 4.
     False
     """
+    return  all([abs(s[i] - y) <= n for i in range(len(s)) for y in s[i + 1: k + i + 1]])
 
 
 if __name__ == "__main__":

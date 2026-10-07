@@ -15,7 +15,7 @@ def lowest(s):
     >>> lowest(range(-5, 5))
     [0]
     """
-
+    return [k for k in s if abs(min(s, key=abs)) == abs(k)]
 
 if __name__ == "__main__":
     import doctest

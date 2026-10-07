@@ -17,7 +17,16 @@ def fit(total, n):
     [True, False, False, True]
     """
     def f(total, n, k):
-        ...
+        if total == 0 and n == 0:
+            return True
+        if total < 0 or n < 0:
+            return False
+        if k > total:
+            return False
+        divisor = f(total - k*k, n - 1, k)
+        next = f(total, n, k + 1)
+        return any([divisor, next])    
+    return f(total, n, 1)
 
 
 if __name__ == "__main__":

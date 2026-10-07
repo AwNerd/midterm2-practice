@@ -16,6 +16,14 @@ def splink(a, b, k):
     >>> splink(Link(2, Link(3, Link(4, Link(5)))), Link(6, Link(7)), 2)
     Link(2, Link(3, Link(6, Link(7, Link(4, Link(5))))))
     """
+    if k:
+        return Link(a.first, splink(a.rest, b, k - 1))
+    elif b:
+        return Link(b.first, splink(a, b.rest, 0))
+    if a:
+        return Link(a.first, splink(a.rest, b, 0))
+    return ()
+
 
 
 if __name__ == "__main__":

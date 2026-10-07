@@ -17,7 +17,7 @@ def max_diff(s, f):
     >>> max_diff(['what', 'a', 'great', 'film'], len)  # len('great') - len('a')
     ('great', 'a')
     """
-
+    return max(s, key=f), min(s, key = f)
 
 if __name__ == "__main__":
     import doctest

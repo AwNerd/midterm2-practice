@@ -24,7 +24,14 @@ def filter_index(f, s):
     Link(2, Link(8, Link(32)))
     """
     def helper(i, s):
-        ...
+        if s == ():
+            return s
+        if f(i):
+            return Link(s.first, helper(i + 1, s.rest))
+        else:
+            return helper(i + 1, s.rest)
+    return helper(0, s)
+
 
 
 if __name__ == "__main__":

@@ -13,7 +13,20 @@ def semiperfect(n):
     >>> [k for k in range(1, 40) if semiperfect(k)]
     [6, 12, 18, 20, 24, 28, 30, 36]
     """
-    
+    #either use the divisor, or go to the next one
+    def helper(s, d):
+        if s == 0:
+            return True
+        if s < 0:
+            return False
+        if d >= n:
+            return False
+        if n % d == 0 and helper(s - d, d + 1):
+            return True
+        else:
+            return helper(s, d + 1)
+
+    return helper(n, 1)
     
 
 if __name__ == "__main__":

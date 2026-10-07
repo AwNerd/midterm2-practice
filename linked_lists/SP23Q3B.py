@@ -18,8 +18,8 @@ def tens(s):
     30
     50
     """
-    def f(suffix, total):
-        ...
+    
+
 
 
 if __name__ == "__main__":

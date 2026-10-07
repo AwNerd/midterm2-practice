@@ -16,6 +16,8 @@ def exclude(s, x):
     >>> a  # no change to a
     [3, 4, 5, 3.0, 6, 5, 3]
     """
+    return [i for i in s if i != x]
+
 
 
 if __name__ == "__main__":

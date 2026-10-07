@@ -17,6 +17,7 @@ def symmetrical(d):
     >>> symmetrical({'M': 'P', 'P': 'M', 'G': 'T'})  # No T->G
     False
     """
+    return all([slice == d.get(d.get(slice)) for slice in d])
 
 
 if __name__ == "__main__":

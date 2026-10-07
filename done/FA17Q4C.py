@@ -21,6 +21,12 @@ def ways(start, end, k, actions):
     >>> ways([3], [2, 3, 2, 3], 4, [lambda x: [2]+x, lambda x: 2*x, lambda x: x[:-1]])
     3
     """
+    if start == end:
+        return 1
+    if k == 0:
+        return 0
+    else:
+        return sum([ways(actions[i](start), end, k - 1, actions) for i in range(len(actions))])
 
 
 if __name__ == "__main__":

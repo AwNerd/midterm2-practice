@@ -20,6 +20,14 @@ def plus(n):
     >>> plus(160450)  # 1 + 60 + 4 + 50 = 115
     115
     """
+    def helper(sum, n):
+        if not n:
+            return sum
+        if n < 10:
+            return helper(sum + n % 10, n // 10)
+        else:
+            return max([helper(sum + n % 10, n // 10), helper(sum + n % 100, n // 100)])
+    return helper(0, n)
 
 
 if __name__ == "__main__":

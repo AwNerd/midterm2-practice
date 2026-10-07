@@ -23,7 +23,16 @@ def acceptable(pizza, disallow={'M': 'P', 'P': 'M'}):
     >>> acceptable("MM__MPPP_")
     False
     """
-
+    previous = pizza[-1]
+    def helper(pizza, previous):
+        if not pizza:
+            return True
+        if previous == disallow.get(pizza[0]) or disallow.get(previous) == pizza[0]:
+            return False
+        previous = pizza[0]
+        return helper(pizza[1:], previous)
+    return helper(pizza, previous)
+        
 
 if __name__ == "__main__":
     import doctest

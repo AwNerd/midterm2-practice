@@ -21,6 +21,14 @@ def plusses(n, cap):
     >>> plusses(1, 2)
     1
     """
+    if not n and cap > 0:
+        return 1
+    if cap <= 0:
+        return 0
+    if n < 10:
+        return plusses(n//10, cap - n % 10)
+    return plusses(n//10, cap - n % 10) + plusses(n//100, cap - n % 100)
+    
 
 
 if __name__ == "__main__":

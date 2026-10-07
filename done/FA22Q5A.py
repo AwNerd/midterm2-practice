@@ -18,7 +18,13 @@ def count_subsets(s):
     3
     """
     def helper(sum_so_far, index):
-        ...
+        if sum_so_far == 100:
+            return 1
+        if sum_so_far > 100 or index >= len(s):
+            return 0
+        else:
+            return helper(sum_so_far + s[index], index + 1) + helper(sum_so_far, index + 1)
+    return helper(0, 0)
 
 
 if __name__ == "__main__":

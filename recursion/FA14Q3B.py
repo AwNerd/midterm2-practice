@@ -20,22 +20,11 @@ def no_eleven(n):
     [[6, 1, 6, 1], [1, 6, 6, 6], [1, 6, 6, 1], [1, 6, 1, 6]]
     """
     if n == 0:
-        return []
+        return [[]]
+    if n == 1:
+        return [[6], [1]]
     else:
-        using_six = [6] + no_eleven(n-1)
-        using_one = [1] + no_eleven(n-1)
-    for list in using_six:
-        for i in range(0, len(list)):
-            if list[i] == 1 and list[i+1] == 1:
-                using_six.pop(list)
-    
-    for list in using_one:
-        for i in range(0, len(list)):
-            if list[i] == 1 and list[i+1] == 1:
-                using_one.pop(list)
-
-    return using_six + using_one
-
+        return [[6] + lst for lst in no_eleven(n - 1)] + [[1, 6] + lst for lst in no_eleven(n - 2)]
 
 if __name__ == "__main__":
     import doctest

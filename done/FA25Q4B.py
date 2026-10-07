@@ -18,6 +18,12 @@ def exclude_link(s, x):
     >>> a  # no change to a
     Link(3, Link(4, Link(5, Link(3.0, Link(6, Link(5, Link(3)))))))
     """
+    if s == ():
+        return ()
+    if s.first == x:
+        return exclude_link(s.rest, x)
+    else:
+        return Link(s.first, exclude_link(s.rest, x))
 
 
 if __name__ == "__main__":

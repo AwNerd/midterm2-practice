@@ -32,6 +32,14 @@ def close(s, x):
     >>> print(close([3, 7, 5, 4, 2, 6], 66))
     67
     """
+    if not s:
+        return 0
+    choices = [product(s[:i]) + close(s[i:], x - product(s[:i])) for i in range(1, len(s) + 1)]
+    return min(choices, key= lambda y: abs(x - y))
+        
+
+
+
     
         
 
